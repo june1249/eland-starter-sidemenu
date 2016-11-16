@@ -4,7 +4,16 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','starter.services','starter.directives'])
+angular.module('starter', [
+  'ionic', 
+  'starter.controllers',
+  'starter.services',
+  'starter.directives',
+  'ngStorage',
+  'ngCordova',
+  'menuTree',
+  'mouseWheelScroll'
+])
 
 .run(function($ionicPlatform, $rootScope, $ionicHistory) {
 
@@ -35,12 +44,12 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','st
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    $rootScope.isWebView = ionic.Platform.isWebView();
   });
 })
 
@@ -54,7 +63,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','st
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    controller: 'MenuCtrl'
   })
 
   .state('app.search', {

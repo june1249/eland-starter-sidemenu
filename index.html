@@ -17,6 +17,10 @@
     </script>-->
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ngDialog/css/ngDialog.css" rel="stylesheet">
+    <link href="lib/ngDialog/css/ngDialog-custom-width.css" rel="stylesheet">
+    <link href="lib/ngDialog/css/ngDialog-theme-default.css" rel="stylesheet">
+    <link href="lib/ngDialog/css/ngDialog-theme-plain.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -26,13 +30,29 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/ngDialog/js/ngDialog.js"></script>
+    <script src="lib/ngStorage/ngStorage.js"></script>
+    <script src="lib/menu-tree/menu-tree.js"></script>
+    <script src="lib/mouse-wheel-scroll/mouseWheelScroll.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+
+    <!-- controllers -->
     <script src="js/controllers/controllers.js"></script>
+    <script src="js/controllers/menuCtrl.js"></script>
+
+    <!-- services -->
+    <script src="js/services/common/popup-service.js"></script>
+    <script src="js/services/menu-service.js">
+
+    <!-- directives -->
+
+
   </head>
 
   <body ng-app="starter">

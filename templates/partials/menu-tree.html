@@ -1,0 +1,28 @@
+<ion-list class="category-tree">
+  <div ng-repeat="menu in menus">
+    <!-- Level 1 -->
+    <ion-item class="item-cat" ng-click="toggleMenu(menu)" ng-class="isActive(menu)">
+      {{menu.name}}
+      <span class="item-note">
+        <i class="icon" ng-if="menu.menus.length" ng-class="isMenuShown(menu) ? 'ion-chevron-down' : 'ion-chevron-right'"></i>
+      </span>
+    </ion-item>
+
+    <!-- Level 2 -->
+    <div ng-repeat="subMenu in menu.menus">
+      <ion-item class="item-sub item-icon-left" ng-if="!subMenu.url" ng-click="toggleSubMenu(subMenu)" ng-show="isMenuShown(menu)" ng-class="isActive(subMenu)">
+        <i class="icon" ng-class="subMenu.icon"></i>
+        {{subMenu.name}} <i class="icon icon-inline" ng-if="subMenu.menus.length" ng-class="isSubMenuShown(subMenu) ? 'ion-android-remove' : 'ion-android-add'"></i>
+      </ion-item>
+      <ion-item class="item-sub item-icon-left" ng-if="subMenu.url" menu-close ng-href="{{subMenu.url}}" ng-show="isMenuShown(menu)" ng-class="isActive(subMenu)">
+        <i class="icon" ng-class="subMenu.icon"></i>
+        {{subMenu.name}} <i class="icon icon-inline" ng-if="subMenu.menus.length" ng-class="isSubMenuShown(subMenu) ? 'ion-android-remove' : 'ion-android-add'"></i>
+      </ion-item>
+      <!-- Level 3 -->
+      <ion-item class="item-item item-icon-left" ng-repeat="item in subMenu.menus" ng-show="isSubMenuShown(subMenu)" menu-close ng-href="{{item.url}}" ng-class="isActive(item)">
+        <i class="icon"></i>
+        {{item.name}}
+      </ion-item>
+    </div>
+  </div>
+</ion-list>
