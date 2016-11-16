@@ -17,21 +17,28 @@ serviceModule.factory('MenuService', function() {
               menus: [
                   {
                       index: 1,
-                      name: "Search Test",
+                      name: "Search",
                       url: "#/app/search",
                       viewType: 0,
                       icon: "menu_01"
                   },
                   {
                       index: 2,
-                      name: "경영자레포트[CU]",
+                      name: "Browse",
+                      url: "#/app/browse",
+                      viewType: 0,
+                      icon: "menu_01"
+                  },
+                  {
+                      index: 2,
+                      name: "Playlists",
                       viewType: 0,
                       icon: "menu_01",
                       menus: [
                         {
                             index: 1,
-                            name: "경영자레포트[지점]",
-                            url: "#/app/search",
+                            name: "Playlists",
+                            url: "#/app/playlists",
                             viewType: 0,
                             icon: "menu_01"
                         }
