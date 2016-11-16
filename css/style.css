@@ -297,6 +297,11 @@ ion-scroll[delegate-handle=calendarScroll] {
 .category-tree .item.item-sub.ng-hide-add, .category-tree .item.item-sub.ng-hide-remove, .category-tree .item.item-item.ng-hide-add, .category-tree .item.item-item.ng-hide-remove {
   display: block !important; }
 
+.category-tree .item.item-sub.item-complex .item-content,
+.item-radio .item-content {
+  padding: 0 16px 0 54px;
+}
+
 .category-tree .item-item {
   border-color: #eee;
   font-size: 14px; }
@@ -309,7 +314,20 @@ ion-scroll[delegate-handle=calendarScroll] {
   color: #fff;
 }
 
+.category-tree .item-cat {
+  padding: 16px;
+}
+
 .category-tree .item-complex .item-content,
+.item-radio .item-content {
+  padding: 0;
+}
+
+.category-tree .item-item {
+  padding: 0 0 0 68px;
+}
+
+.category-tree .item.item-sub .item-item .item-complex .item-content,
 .item-radio .item-content {
   padding: 0 16px 0 54px;
 }
@@ -324,7 +342,7 @@ ion-scroll[delegate-handle=calendarScroll] {
   height: 154px;
 }
 .has-menuheader {
-  top: 154px;
+  top: 151px;
 }
 
 .cropArea {
